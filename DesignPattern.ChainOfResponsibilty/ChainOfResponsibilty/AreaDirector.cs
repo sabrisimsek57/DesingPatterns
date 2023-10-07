@@ -12,7 +12,7 @@ namespace DesignPattern.ChainOfResponsibilty.ChainOfResponsibilty
         public override void ProcessRequest(CustomerProcessViewModel req)
         {
             Context context = new Context();
-            if (req.Amount <= 250000)
+            if (req.Amount <= 400000)
             {
                 CustomerProcess customerProcess = new CustomerProcess();
 

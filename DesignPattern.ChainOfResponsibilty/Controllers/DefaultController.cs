@@ -1,6 +1,9 @@
 ﻿using DesignPattern.ChainOfResponsibilty.ChainOfResponsibilty;
+using DesignPattern.ChainOfResponsibilty.Dal;
+using DesignPattern.ChainOfResponsibilty.datareit;
 using DesignPattern.ChainOfResponsibilty.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +12,8 @@ using System.Threading.Tasks;
 namespace DesignPattern.ChainOfResponsibilty.Controllers
 {
     public class DefaultController : Controller
-    { 
-        [HttpGet]
-        public IActionResult Index()
-        {
-            return View();
-        }
+    {
+       
         [HttpPost]
         public IActionResult Index(CustomerProcessViewModel model)  
         {
@@ -29,6 +28,14 @@ namespace DesignPattern.ChainOfResponsibilty.Controllers
 
             Treasurer.ProcessRequest(model);
             return View();
+        }
+        [HttpGet]
+        public IActionResult List()
+        {
+            DataRetriever dataRetriever = new DataRetriever();
+            var customerProcesses = dataRetriever.GetCustomerProcessesFromDatabase();
+            return View(customerProcesses);
+
         }
     }
 }
