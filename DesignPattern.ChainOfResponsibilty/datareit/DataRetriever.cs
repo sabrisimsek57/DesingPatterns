@@ -43,7 +43,6 @@ namespace DesignPattern.ChainOfResponsibilty.datareit
                     }
                     catch (Exception ex)
                     {
-                        // Hata yönetimi burada yapılabilir, örneğin bir hata sayfasına yönlendirme
                     }
                 }
             }

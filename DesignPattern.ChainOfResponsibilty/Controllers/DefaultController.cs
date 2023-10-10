@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace DesignPattern.ChainOfResponsibilty.Controllers
 {
+
     public class DefaultController : Controller
     {
        
@@ -30,6 +31,9 @@ namespace DesignPattern.ChainOfResponsibilty.Controllers
             return View();
         }
         [HttpGet]
+
+
+
         public IActionResult List()
         {
             DataRetriever dataRetriever = new DataRetriever();
