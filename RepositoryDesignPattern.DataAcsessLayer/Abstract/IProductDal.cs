@@ -9,5 +9,6 @@ namespace RepositoryDesignPattern.DataAcsessLayer.Abstract
 {
     public interface IProductDal : IGenericDal<Product>
     {
+        List<Product> ProductListWithCategory();
     }
 }

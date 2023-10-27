@@ -39,6 +39,11 @@ namespace RepositoryDesignPattern.BusinessLayer.Concrete
             
         }
 
+        public List<Product> TProductListWithCategory()
+        {
+            return productDal.ProductListWithCategory();
+        }
+
         public void TUpdate(Product t)
         {
             productDal.Update(t);   
